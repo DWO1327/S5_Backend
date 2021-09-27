@@ -1089,11 +1089,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dominik\\source\\repos\\GuestbookBackend\\GuestbookBackend\\GuestbookBackend.csproj",
+      "projectUniqueName": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
       "projectName": "GuestbookBackend",
-      "projectPath": "C:\\Users\\Dominik\\source\\repos\\GuestbookBackend\\GuestbookBackend\\GuestbookBackend.csproj",
+      "projectPath": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
       "packagesPath": "C:\\Users\\Dominik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dominik\\source\\repos\\GuestbookBackend\\GuestbookBackend\\obj\\",
+      "outputPath": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
