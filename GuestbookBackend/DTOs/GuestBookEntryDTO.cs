@@ -14,7 +14,6 @@ namespace GuestbookBackend.DTOs
         public string Text { get; set; }
         [Required]
         public string Visitor { get; set; }
-        [Required]
         public DateTime Created { get; set; }
     }
 }
