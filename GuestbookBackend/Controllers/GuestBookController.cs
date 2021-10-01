@@ -28,7 +28,7 @@ namespace GuestbookBackend.Controllers
         }
         // POST auf guestbook/entries laut Vorgabe
         [HttpPost]
-        public async Task<ActionResult<GuestBookEntry>> PostGuestBookEntry(GuestBookEntryDTO GBentryDTO)
+        public async Task<ActionResult<GuestBookEntry>> PostGuestBookEntry([FromBody]GuestBookEntryDTO GBentryDTO)
         {
             GuestBookEntry guestBookEntry = new GuestBookEntry(GBentryDTO);
             _context.GuestBookEntries.Add(guestBookEntry);

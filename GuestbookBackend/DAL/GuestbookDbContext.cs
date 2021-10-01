@@ -14,7 +14,7 @@ namespace GuestbookBackend.DAL
         {
         }
 
-        public virtual DbSet<GuestBookEntry> GuestBookEntries { get; set; }
+        public DbSet<GuestBookEntry> GuestBookEntries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

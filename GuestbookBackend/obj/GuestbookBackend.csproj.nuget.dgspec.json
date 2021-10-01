@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj": {}
+    "C:\\Users\\d.wolff\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj": {
+    "C:\\Users\\d.wolff\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
+        "projectUniqueName": "C:\\Users\\d.wolff\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
         "projectName": "GuestbookBackend",
-        "projectPath": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
-        "packagesPath": "C:\\Users\\Dominik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dominik\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\obj\\",
+        "projectPath": "C:\\Users\\d.wolff\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\GuestbookBackend.csproj",
+        "packagesPath": "C:\\Users\\d.wolff\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\d.wolff\\Documents\\GitHub\\S5_Backend\\GuestbookBackend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dominik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\d.wolff\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -81,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
