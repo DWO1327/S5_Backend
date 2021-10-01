@@ -24,5 +24,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: build container
-        run: ./build.sh
+      - name: build container        
+        run: |
+            chmod +x ./build.sh
+            ./build.sh
+            #docker tag dwo1327 idi2019.azurecr.io/dwo1327
+            #docker push idi2019.azurecr.io/dwo1327
