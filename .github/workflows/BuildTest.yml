@@ -27,6 +27,7 @@ jobs:
           
       - name: build
         run: dotnet build
+        working-directory: .
         
       - name: publish
         run: dotnet publish -o ./release
