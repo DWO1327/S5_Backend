@@ -13,23 +13,24 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-	  - name: checkout
-        uses: actions/checkout@v2
-	  
-	  
-
-      # Runs a single command using the runners shell
-      - name: build container        
-        run: |
-            chmod +x ./build.sh
-            ./build.sh
-            #docker tag dwo1327 idi2019.azurecr.io/dwo1327
-            #docker push idi2019.azurecr.io/dwo1327
+    - name: checkout
+      uses: actions/checkout@v2
+      
+    - name: install-dotnet    
+    - uses: actions/setup-dotnet@v1.7.2
+      with:
+        dotnet-version: '5.0.x'
+	
+    - name: build
+      run: dotnet build
+    
+    - name: release
+      run: dotnet publish -o ./release
+      
+    - name: build container
+      run: docker build -t dwo1327 .
+      working-directory: ./release
+     
