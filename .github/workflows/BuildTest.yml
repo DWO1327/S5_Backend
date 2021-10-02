@@ -31,6 +31,9 @@ jobs:
       run: dotnet publish -o ./release
       
     - name: build container
-      run: docker build -t dwo1327 .
-      working-directory: ./release
+      run: docker build . --file Dockerfile --tag dwo1327
+      # working-directory: ./release
+    
+    - name: tag
+      run: docker tag dwo1327 idi2019.azurecr.io/dwo1327-S5Backend
      
