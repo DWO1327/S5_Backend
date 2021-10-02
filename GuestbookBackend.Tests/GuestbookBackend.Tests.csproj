@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GuestbookBackend\Guestbookbackend.csproj" />
+    <ProjectReference Include="..\GuestbookBackend\GuestbookBackend.csproj" />
   </ItemGroup>
 
 </Project>
