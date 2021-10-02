@@ -30,6 +30,9 @@ jobs:
     - name: release
       run: dotnet publish -o ./release
       
+    - name: test
+      run: dotnet test
+      
     - name: build container
       run: docker build . --file Dockerfile --tag dwo1327
       #working-directory: ./release
