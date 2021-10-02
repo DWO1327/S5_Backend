@@ -6,14 +6,14 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["GuestBookFront/GuestBookFront.csproj", "GuestBookFront/"]
-RUN dotnet restore "GuestBookFront/GuestBookFront.csproj"
+COPY ["GuestbookBackend/GuestbookBackend.csproj", "GuestbookBackend/"]
+RUN dotnet restore "GuestbookBackend/GuestbookBackend.csproj"
 COPY . .
 WORKDIR "/src/GuestBookFront"
-RUN dotnet build "GuestBookFront.csproj" -c Release -o /app/build
+RUN dotnet build "GuestbookBackend.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "GuestBookFront.csproj" -c Release -o /app/publish
+RUN dotnet publish "GuestbookBackend.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
