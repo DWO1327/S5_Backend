@@ -1,2 +1,2 @@
-chmod +x ./build.sh
+#!/bin/bash
 dotnet build

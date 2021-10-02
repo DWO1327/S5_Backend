@@ -19,7 +19,7 @@ namespace GuestbookBackend.Models
             Title = entryDTO.Title;
             Visitor = entryDTO.Visitor;
             Text = entryDTO.Text;
-            Created = entryDTO.Created;
+            Created = DateTime.Now;
         }
 
         [Required]
