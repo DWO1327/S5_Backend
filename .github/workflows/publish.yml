@@ -7,6 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,10 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # Runs a set of commands using the runners shell
+      - name: Rpublish
       - name: build container        
         run: |
-            chmod +x ./build.sh
-            ./build.sh
-            #docker tag dwo1327 idi2019.azurecr.io/dwo1327
-            #docker push idi2019.azurecr.io/dwo1327
+            chmod +x ./publish.sh
+            ./publish.sh
