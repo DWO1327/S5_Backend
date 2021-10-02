@@ -21,12 +21,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
+        
+      - name: install dotnet
+        uses: actions/setup-dotnet@v1.7.2
+        with: 
+          dotnet-version: '5.0.x'
+          
+      - name: build
+        run: dotnet build
+        
+      - name: publish
+        run: dotnet publish -o ./release
 
       # Runs a single command using the runners shell
       - name: build container        
-        run: |
-            chmod +x ./build.sh
-            ./build.sh
-            #docker tag dwo1327 idi2019.azurecr.io/dwo1327
-            #docker push idi2019.azurecr.io/dwo1327
+        run: docker build -t dw1327_Abgabe .
+        working-directory: ./release
