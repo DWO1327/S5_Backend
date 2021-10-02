@@ -9,7 +9,7 @@ WORKDIR /src
 COPY ["GuestbookBackend/GuestbookBackend.csproj", "GuestbookBackend/"]
 RUN dotnet restore "GuestbookBackend/GuestbookBackend.csproj"
 COPY . .
-WORKDIR "/src/GuestBookFront"
+WORKDIR "/src/GuestbookBackend"
 RUN dotnet build "GuestbookBackend.csproj" -c Release -o /app/build
 
 FROM build AS publish
