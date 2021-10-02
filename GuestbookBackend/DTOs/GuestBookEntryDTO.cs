@@ -8,6 +8,13 @@ namespace GuestbookBackend.DTOs
 {
     public class GuestBookEntryDTO
     {
+        public GuestBookEntryDTO(string title, string text, string visitor)
+        {
+            Title = title;
+            Text = text;
+            Visitor = visitor;
+        }
+
         [Required]
         public string Title { get; set; }
         [Required]

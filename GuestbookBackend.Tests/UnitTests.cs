@@ -9,16 +9,16 @@ using Xunit;
 
 namespace GuestbookBackend.Tests
 {
-    public class UnitTests
+    public class BaseTest
     {
         protected GuestbookDbContext _context;
 
-        [Fact]
-        public void Test1()
+        public BaseTest()
         {
             var options = new DbContextOptionsBuilder<GuestbookDbContext>()
-                    .UseInMemoryDatabase(Guid.NewGuid().ToString())
-                    .Options;
+                    .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                    .Options;            
+
 
             _context = new GuestbookDbContext(options);
 
@@ -36,7 +36,7 @@ namespace GuestbookBackend.Tests
         [Fact]
         public void CheckAdd()
         {
-            var GBEntryDTO = new GuestBookEntryDTO();
+            var GBEntryDTO = new GuestBookEntryDTO("ABC","DEF","GHI");
 
             _context.GuestBookEntries.Add(new GuestBookEntry(GBEntryDTO));
 

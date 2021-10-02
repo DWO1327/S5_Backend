@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using RestSharp;
+using Newtonsoft.Json;
 using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using System.Net.Http;
+using System.Text;
 
 namespace GuestbookBackend.Tests
 {
@@ -30,7 +29,7 @@ namespace GuestbookBackend.Tests
             var response = await client.GetAsync(url);
 
             // Assert
-            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            response.EnsureSuccessStatusCode();
             Assert.Equal("application/json; charset=utf-8",
                 response.Content.Headers.ContentType.ToString());
 
@@ -48,7 +47,7 @@ namespace GuestbookBackend.Tests
             var response = await client.GetAsync(url);
 
             // Assert
-            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            response.EnsureSuccessStatusCode();
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
 
@@ -59,14 +58,17 @@ namespace GuestbookBackend.Tests
             var client = _factory.CreateClient();
 
             // Act
-            var response = await client.PostAsync("/guestbook/entries", new StringContent("abc123"));
 
+            var response = await client.PostAsync("/guestbook/entries"
+                , new StringContent(
+                JsonConvert.SerializeObject(new StringContent("adgadg")),
+            Encoding.UTF8,
+            "application/json"));
 
             // Assert
 
             Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
-
     }
 
 }

@@ -28,6 +28,11 @@ namespace GuestbookBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<GuestBookEntry>> PostGuestBookEntry([FromBody]GuestBookEntryDTO GBentryDTO)
         {
+            //
+            if (GBentryDTO.Title == null || GBentryDTO.Text == null || GBentryDTO.Visitor == null)
+                return BadRequest();
+            //
+
             GuestBookEntry guestBookEntry = new GuestBookEntry(GBentryDTO);
             _context.GuestBookEntries.Add(guestBookEntry);
             await _context.SaveChangesAsync();
