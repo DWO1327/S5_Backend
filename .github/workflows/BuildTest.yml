@@ -30,8 +30,8 @@ jobs:
       with: 
         mariadb version: '10.5'
         mysql database: 'guestbook'
-        mysql user: 'admin'
-        mysql password: 'admin'
+        mysql user: 'root'
+        mysql password: 'root'
         
     - name: build
       run: dotnet build
