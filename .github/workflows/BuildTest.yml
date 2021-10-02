@@ -23,16 +23,18 @@ jobs:
       uses: actions/setup-dotnet@v1.7.2
       with:
         dotnet-version: '5.0.x'
+     
+    - name: InstallDatabase
+      uses: shogo82148/actions-setup-mysql@v1
+      with:
+        distribution: 'mariadb'
+        mysql-version: '10.6'
+        root-password: 'root'
+        user: 'user'
+        password: 'password'
+    - run: mysql -uroot -h127.0.0.1 -e 'SELECT version()'
 
-    - name: installDB
-      run: sudo service mysql stop
-    - uses: getong/mariadb-action@v1.1
-      with: 
-        mariadb version: '10.5'
-        mysql database: 'guestbook'
-        mysql user: 'root'
-        mysql password: 'root'
-        
+   
     - name: build
       run: dotnet build
     
