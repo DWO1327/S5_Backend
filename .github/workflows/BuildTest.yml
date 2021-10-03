@@ -55,5 +55,5 @@ jobs:
       run: docker run -d --name mysql mysql
     
     - name: run_docker
-      run: docker run dwo1327 -e ConnectionStrings_dbconnection="<DataSource=mysql;Database=guestbook;UserId=root;Password=root;>" --link mysql:mysql
+      run: docker run -e ConnectionStrings_dbconnection="<DataSource=mysql;Database=guestbook;UserId=root;Password=root;>" --link mysql:mysql dwo1327
      
