@@ -55,6 +55,7 @@ jobs:
       run: docker run -d --name mysql mysql
     
     - name: run_docker
-      run: docker run --rm -e "ConnectionStrings:dbconnection\"=\"Server=mysql;Database=guestbook;User Id=root;Password=root;Trust_connection=false" dwo1327
+      run: docker run --rm --name stat -it -d -p 8090:8080 -e ConnectionStrings:dbconnection="Server=mysql;Database=guestbook;User Id=root;Password=root;" dwo1327
+      
       
      
