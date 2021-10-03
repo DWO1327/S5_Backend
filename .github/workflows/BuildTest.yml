@@ -50,7 +50,10 @@ jobs:
     
     - name: tag
       run: docker tag dwo1327 idi2019.azurecr.io/dwo1327-s5backend
+      
+    - name: mysqlDocker
+      run: docker run -d --name mysql mysql
     
     - name: run_docker
-      run: docker run dwo1327 -p 5000:80 -e docker run -p 5000:80 -e Azure__SignalR__ConnectionString="<DataSource=127.0.0.1;Database=guestbook;UserId=root;Password=root;>"
+      run: docker run dwo1327 -p 5000:80 --link mysql:mysql -e Azure__SignalR__ConnectionString="<DataSource=mysql;Database=guestbook;UserId=root;Password=root;>"
      
