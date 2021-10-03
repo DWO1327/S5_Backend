@@ -65,7 +65,7 @@ jobs:
        password: ${{ secrets.REG_PASSWORD }}
            
     - name: publish
-      run: docker push -t dwo1327 idi2019.azurecr.io/dwo1327-gb-b
+      run: docker push dwo1327 idi2019.azurecr.io/dwo1327-gb-b
       
       
      
