@@ -62,7 +62,7 @@ jobs:
       with: 
        login-server: idi2019.azurecr.io
        username: ${{ secrets.REG_USERNAME }}
-       password: ${{ secrets.REG_PASSWORD }}       
+       password: ${{ secrets.REG_PASSWORD }}
            
     - name: publish
       run: docker push -t dwo1327 idi2019.azurecr.io/dwo1327-gb-b
